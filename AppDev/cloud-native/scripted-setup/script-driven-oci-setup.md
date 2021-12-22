@@ -61,7 +61,7 @@ Please go to **Task 2**
 
 We will use git to update the scripts
 
-  1. Open the OCI Cloud shell type
+  1. Open the OCI Cloud shell 
   
   2. Make sure you are in the home directory
   
