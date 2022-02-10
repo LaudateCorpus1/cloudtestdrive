@@ -60,7 +60,9 @@ We need to specify the Helm repository for Prometheus
   ```
 "prometheus-community" has been added to your repositories
 ```
-  
+
+Note that in some situations the setup scripts will have added the repo for you, in that case you will get a message that it already is setup, do not worry if this happens, it's fine.
+
 Now update the repository information
 
   2. In the OCI Cloud shell 
@@ -80,11 +82,17 @@ Depending on which other modules you have done you may see differences in the re
 
 If your cloud shell session is new or has been restarted then the shell variable `$EXTERNAL_IP` may be invalid, expand this section if you think this may be the case to check and reset it if needed.
 
-<details><summary><b>How to check if $EXTERNAL_IP is set, and re-set it if it's not</b></summary>
+  Check if the EXTERNAL_IP variable is still set
 
-**To check if `$EXTERNAL_IP` is set**
+  - `echo $EXTERNAL_IP`
 
-If you want to check if the variable is still set type `echo $EXTERNAL_IP` if it returns the IP address you're ready to go, if not then you'll need to re-set it.
+```
+123.123.123.123
+
+```
+  Of course the actual IP address will be different, but if you have an IP Address in the output you're fine, if not expand the section below and follow the instructions.
+  
+<details><summary><b>How to re-set $EXTERNAL_IP</b></summary>
 
 **To get the external IP address if you no longer have it**
 
@@ -528,11 +536,17 @@ Let's make a few calls to list the stock and see what we get
 
 If your cloud shell session is new or has been restarted then the shell variable `$EXTERNAL_IP` may be invalid, expand this section if you think this may be the case to check and reset it if needed.
 
-<details><summary><b>How to check if $EXTERNAL_IP is set, and re-set it if it's not</b></summary>
+  Check if the EXTERNAL_IP variable is still set
 
-**To check if `$EXTERNAL_IP` is set**
+  - `echo $EXTERNAL_IP`
 
-If you want to check if the variable is still set type `echo $EXTERNAL_IP` if it returns the IP address you're ready to go, if not then you'll need to re-set it.
+```
+123.123.123.123
+
+```
+  Of course the actual IP address will be different, but if you have an IP Address in the output you're fine, if not expand the section below and follow the instructions.
+  
+<details><summary><b>How to re-set $EXTERNAL_IP</b></summary>
 
 **To get the external IP address if you no longer have it**
 

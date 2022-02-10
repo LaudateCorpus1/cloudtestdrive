@@ -308,7 +308,7 @@ In the helm command you'll have seen a couple of `--set`` options.  These are oc
   - `export EXTERNAL_IP=<External IP>`
   
 
-**IMPORTANT** Ths OCI Cloud shall variable you've just set will persist for the duration of the cloud shell session (it will "time out" after approximately 20 mins of no interaction), if you exit and re-open the browser window / tab, start using a different OCI Cloud Shell instance, or reconnect after a timeout the variable will need to be set again using the `export EXTERNAL_IP=<External IP>` you just used - if you don't then commands that use the variable will not fail, potentially silently. If you are in doubt if the variable is set then entering `echo $EXTERNAL_IP` into the cloud shell will display the IP address, if it returns nothing or an empty line then you will need to re-set the variable.
+**IMPORTANT** Ths OCI Cloud shell variable you've just set will persist for the duration of the cloud shell session (it will "time out" after approximately 20 mins of no interaction), if you exit and re-open the browser window / tab, start using a different OCI Cloud Shell instance, or reconnect after a timeout the variable will need to be set again using the `export EXTERNAL_IP=<External IP>` you just used - if you don't then commands that use the variable will not fail, potentially silently. If you are in doubt if the variable is set then entering `echo $EXTERNAL_IP` into the cloud shell will display the IP address, if it returns nothing or an empty line then you will need to re-set the variable.
 
 Note that in a production environment you might want to terminate the encryption in the load balancer for efficiency reasons, and also between the microservices using a service mesh (which is a later optional lab).
 
@@ -317,13 +317,20 @@ Note that in a production environment you might want to terminate the encryption
 
 Setting up the Kubernetes dashboard (or any) service using helm is pretty easy. it's basically a simple command. 
 
-  1. To install the dashboard we will be using the environment variable `EXTERNAL_IP` which we earlier set to the IP address of the Load balancer of the Ingress controller service. The variable `$EXTERNAL_IP` in the test below will be replaced by the value you set it to when the command is run. **IMPORTANT** if you have for any reason had to create a new cloud shell that variable will need to be setup again. 
+  1. To install the dashboard we will be using the environment variable `EXTERNAL_IP` which we earlier set to the IP address of the Load balancer of the Ingress controller service. The variable `$EXTERNAL_IP` in the text below will be replaced by the value you set it to when the command is run. **IMPORTANT** if you have for any reason had to create a new cloud shell that variable will need to be setup again. 
+If your cloud shell session is new or has been restarted then the shell variable `$EXTERNAL_IP` may be invalid, expand this section if you think this may be the case to check and reset it if needed.
 
-<details><summary><b>How to check if $EXTERNAL_IP is set, and re-set it if it's not</b></summary>
+  Check if the EXTERNAL_IP variable is still set
 
-**To check if `$EXTERNAL_IP` is set**
+  - `echo $EXTERNAL_IP`
 
-If you want to check if the variable is still set type `echo $EXTERNAL_IP` if it returns the IP address you're ready to go, if not then you'll need to re-set it.
+```
+123.123.123.123
+
+```
+  Of course the actual IP address will be different, but if you have an IP Address in the output you're fine, if not expand the section below and follow the instructions.
+  
+<details><summary><b>How to re-set $EXTERNAL_IP</b></summary>
 
 **To get the external IP address if you no longer have it**
 
@@ -1021,11 +1028,17 @@ ingress-nginx-nginx-ingress-default-backend   ClusterIP      10.108.194.91   <no
 
 Earlier we stored the value of the external IP address in the `$EXTERNAL_IP` variable, if you want to check if it's correct do `echo $EXTERNAL_IP` in the OCI Cloud Shell and compare it to the one shown when you looked at the ingress service.
 
-<details><summary><b>How to check if $EXTERNAL_IP is set, and re-set it if it's not</b></summary>
+  Check if the EXTERNAL_IP variable is still set
 
-**To check if `$EXTERNAL_IP` is set**
+  - `echo $EXTERNAL_IP`
 
-If you want to check if the variable is still set type `echo $EXTERNAL_IP` if it returns the IP address you're ready to go, if not then you'll need to re-set it.
+```
+123.123.123.123
+
+```
+  Of course the actual IP address will be different, but if you have an IP Address in the output you're fine, if not expand the section below and follow the instructions.
+  
+<details><summary><b>How to re-set $EXTERNAL_IP</b></summary>
 
 **To get the external IP address if you no longer have it**
 

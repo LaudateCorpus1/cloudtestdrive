@@ -575,11 +575,19 @@ kubectl will pick them up and apply them, Kubernetes will restart the linkerd-we
 
 ### Task 5b: Securing the connection to the linkerd UI
 
-<details><summary><b>How to check if $EXTERNAL_IP is set, and re-set it if it's not</b></summary>
+If your cloud shell session is new or has been restarted then the shell variable `$EXTERNAL_IP` may be invalid, expand this section if you think this may be the case to check and reset it if needed.
 
-**To check if `$EXTERNAL_IP` is set**
+  Check if the EXTERNAL_IP variable is still set
 
-If you want to check if the variable is still set type `echo $EXTERNAL_IP` if it returns the IP address you're ready to go, if not then you'll need to re-set it.
+  - `echo $EXTERNAL_IP`
+
+```
+123.123.123.123
+
+```
+  Of course the actual IP address will be different, but if you have an IP Address in the output you're fine, if not expand the section below and follow the instructions.
+  
+<details><summary><b>How to re-set $EXTERNAL_IP</b></summary>
 
 **To get the external IP address if you no longer have it**
 

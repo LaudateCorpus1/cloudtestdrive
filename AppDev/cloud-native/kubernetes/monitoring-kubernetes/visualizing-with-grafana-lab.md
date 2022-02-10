@@ -50,7 +50,7 @@ Like many other Kubernetes services Grafana can be installed using helm. By defa
 "grafana" has been added to your repositories
 ```
 
-If you have already added the bitnami repository in another module you'll be told it's already there, that's fine.
+Note that in some situations the setup scripts will have added the repo for you, in that case you will get a message that it already is setup, do not worry if this happens, it's fine.
 
   2. Update the repository cache
   
@@ -70,11 +70,17 @@ Depending on what modules you have done previously the updated repositories list
 
 If your cloud shell session is new or has been restarted then the shell variable `$EXTERNAL_IP` may be invalid, expand this section if you think this may be the case to check and reset it if needed.
 
-<details><summary><b>How to check if $EXTERNAL_IP is set, and re-set it if it's not</b></summary>
+  Check if the EXTERNAL_IP variable is still set
 
-**To check if `$EXTERNAL_IP` is set**
+  - `echo $EXTERNAL_IP`
 
-If you want to check if the variable is still set type `echo $EXTERNAL_IP` if it returns the IP address you're ready to go, if not then you'll need to re-set it.
+```
+123.123.123.123
+
+```
+  Of course the actual IP address will be different, but if you have an IP Address in the output you're fine, if not expand the section below and follow the instructions.
+  
+<details><summary><b>How to re-set $EXTERNAL_IP</b></summary>
 
 **To get the external IP address if you no longer have it**
 
@@ -263,11 +269,17 @@ Once you've selected it then the display will update with the graph you've selec
   
 If your cloud shell session is new or has been restarted then the shell variable `$EXTERNAL_IP` may be invalid, expand this section if you think this may be the case to check and reset it if needed.
 
-<details><summary><b>How to check if $EXTERNAL_IP is set, and re-set it if it's not</b></summary>
+  Check if the EXTERNAL_IP variable is still set
 
-**To check if `$EXTERNAL_IP` is set**
+  - `echo $EXTERNAL_IP`
 
-If you want to check if the variable is still set type `echo $EXTERNAL_IP` if it returns the IP address you're ready to go, if not then you'll need to re-set it.
+```
+123.123.123.123
+
+```
+  Of course the actual IP address will be different, but if you have an IP Address in the output you're fine, if not expand the section below and follow the instructions.
+  
+<details><summary><b>How to re-set $EXTERNAL_IP</b></summary>
 
 **To get the external IP address if you no longer have it**
 

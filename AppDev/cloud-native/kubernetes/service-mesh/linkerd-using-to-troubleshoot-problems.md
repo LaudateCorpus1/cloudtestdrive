@@ -59,14 +59,19 @@ Once you are in the directory start the load generator
 
 If your cloud shell session is new or has been restarted then the shell variable `$EXTERNAL_IP` may be invalid, expand this section if you think this may be the case to check and reset it if needed.
 
-<details><summary><b>How to check if $EXTERNAL_IP is set, and re-set it if it's not</b></summary>
+  Check if the EXTERNAL_IP variable is still set
 
-**To check if `$EXTERNAL_IP` is set**
+  - `echo $EXTERNAL_IP`
 
-If you want to check if the variable is still set type `echo $EXTERNAL_IP` if it returns the IP address you're ready to go, if not then you'll need to re-set it.
+```
+123.123.123.123
+
+```
+  Of course the actual IP address will be different, but if you have an IP Address in the output you're fine, if not expand the section below and follow the instructions.
+  
+<details><summary><b>How to re-set $EXTERNAL_IP</b></summary>
 
 **To get the external IP address if you no longer have it**
-
 In the OCI Cloud shell type
 
   -  `kubectl --namespace ingress-nginx get services -o wide ingress-nginx-controller`
