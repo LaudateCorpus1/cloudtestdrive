@@ -45,20 +45,6 @@ NAMESPACE: traefik
 STATUS: deployed
 REVISION: 1
 TEST SUITE: None
-NOTES:
-1. Get Traefik\'s load balancer IP/hostname:
-
-     NOTE: It may take a few minutes for this to become available.
-
-     You can watch the status by running:
-
-         $ kubectl get svc traefik-operator --namespace traefik -w
-
-     Once 'EXTERNAL-IP' is no longer '<pending>':
-
-         $ kubectl describe svc traefik-operator --namespace traefik | grep Ingress | awk '{print $3}'
-
-2. Configure DNS records corresponding to Kubernetes ingress resources to point to the load balancer IP/hostname found in step 1
 ```
 
 The Traefik installation is basically done. Verify the Traefik (load balancer) services:
@@ -69,7 +55,6 @@ The output should be similar to the following:
 ```bash
 NAME                         TYPE           CLUSTER-IP     EXTERNAL-IP       PORT(S)                      AGE
 traefik-operator             LoadBalancer   10.96.50.120   129.146.148.215   443:31388/TCP,80:31282/TCP   48s
-traefik-operator-dashboard   ClusterIP      10.96.206.52   <none>            80/TCP                       48s
 ```
 Please note the EXTERNAL-IP of the *traefik-operator* service. This is the public IP address of the load balancer that you will use to access the WebLogic Server Administration Console and the sample application.
 

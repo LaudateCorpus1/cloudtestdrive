@@ -4,7 +4,7 @@
 
 This lab walks you through the steps how to create managed Kubernetes environment on Oracle Cloud Infrastructure.
 
-Estimated Lab Time: 25 minutes
+Estimated Lab Time: 15 minutes
 
 ### About Product/Technology
 
@@ -15,16 +15,6 @@ Oracle Cloud Infrastructure Container Engine for Kubernetes is a fully-managed, 
 In this lab, you will:
 * Create OKE (Oracle Kubernetes Engine) instance
 * Open the OCI Cloud Shell and configure `kubectl` to interact with the Kubernetes cluster
-
-### Prerequisites ###
-
-You must have an [Oracle Cloud Infrastructure](https://cloud.oracle.com/en_US/cloud-infrastructure) enabled account.
-
-To create the Container Engine for Kubernetes (OKE), complete the following steps:
-
-- Create the network resources (VCN, subnets, security lists, etc.)
-- Create a cluster
-- Create a `NodePool`
 
 This tutorial shows you the way the *Quick Start* feature creates and configures all the necessary resources for a three node Kubernetes cluster. All the nodes will be deployed in different availability domains to ensure high availability.
 
@@ -38,6 +28,18 @@ In the Console, open the navigation menu. Under *Solutions, Platform and Edge*, 
 
 ![](images/010.clusters.png)
 
+As this is the first object you will be creating you need to set the correct **Compartment** where you are authorised to work in.
+
+- You need to select the **compartment name** that was communicated by the Oracle Instructors running this workshop.
+
+![image-20220114170726477](images/image-20220114170726477.png)
+
+- Click on the **Pick a compartment** selector and expand the **root** compartment by clicking on the **+** sign:
+
+![image-20220114170858854](images/image-20220114170858854.png)
+
+You should now see a list of compartments, select the compartment provided to you by your instructors.
+
 On the Cluster List page, click **Create Cluster**.
 
 ![](images/020.create.cluster.png)
@@ -49,14 +51,15 @@ In the Create Cluster Solution dialog, select *Quick Create* and click **Launch 
 **Quick Create** will create a new cluster with default settings, along with new network resources for the new cluster.
 
 Specify the following configuration details on the Cluster Creation page:
-- **Name**: The name of the cluster. Leave the default value.
-- **Compartment**: The name of the compartment. Leave the default value.
-- **Kubernetes version**: The version of Kubernetes. Leave the default value which should be `1.16.8`.
-- **Choose Visibility Type**: Is the cluster going to be routable or not. Leave the default *Private* value.
-- **Shape**: The shape to use for each node in the node pool. The shape determines the number of CPUs and the amount of memory allocated to each node. The list shows only those shapes available in your tenancy that are supported by OKE. Select the available *VM.Standard2.1*.
+- **Name**: The name of the cluster. Use a number or your name to distinguish your cluster from the one created by other participants.
+- **Compartment**: The name of the compartment. Make sure this is the compartment provided to you by your instructors.
+- **Kubernetes version**: The version of Kubernetes. Leave the default value .
+- **Kubernetes API Endpoint**: keep the default **Public Endpoint** option
+- **Kubernetes Worker Nodes**: keep the default.
+- **Shape**: The shape to use for each node in the node pool. The shape determines the number of CPUs and the amount of memory allocated to each node. Use the default value provided.
 - **Number of nodes**: The number of worker nodes to create. Leave the default value, *3*
 
-![](images/040.quick.details.png)
+![image-20220121151145174](images/image-20220121151145174.png)
 
 Click **Next** to review the details you entered for the new cluster.
 
@@ -124,4 +127,4 @@ You may now **proceed to the next lab**.
 
 ## Acknowledgements
 * **Author** - Maciej Gruszka, Peter Nagy, September 2020
-* **Last Updated By/Date**
+* **Last Updated By/Date** - Jan Leemans, January 2022
